@@ -1,0 +1,286 @@
+.portfolio-section {
+  background: #fff;
+  color: #111;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* SLIDER */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  position: relative;
+  width: 900px;
+  height: 420px;
+  perspective: 1400px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 320px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.9s ease;
+  opacity: 0;
+}
+
+/* ACTIVE */
+.slide.active {
+  transform: translateX(-50%) translateZ(0);
+  opacity: 1;
+  z-index: 3;
+}
+
+/* LEFT */
+.slide.left {
+  transform: translateX(-140%) rotateY(35deg) scale(0.85);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* RIGHT */
+.slide.right {
+  transform: translateX(40%) rotateY(-35deg) scale(0.85);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* CARD */
+.slide-card {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #f5f5f5, #ffffff);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.slide-card img {
+  height: 300px;
+}
+
+.slide-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.slide-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+
+  color: #111;
+  padding: 10px 20px;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.2);
+}
+.portfolio-layout {
+  display: flex;
+  gap: 60px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* LEFT – ACCORDION */
+.portfolio-left {
+  flex: 2;
+}
+/* SLIDER CONTROLS */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* yalnız button-lar kliklənə bilsin */
+  z-index: 10;
+}
+
+.slider-controls button {
+  pointer-events: all;
+  background: rgba(255, 204, 0, 0.85); /* parlaq sarı */
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 36px;
+  cursor: pointer;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slider-controls button:hover {
+  background: linear-gradient(135deg, #ffcc00, #ff6a00);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.slider-controls button:active {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* MOBİL UYUMLU */
+@media (max-width: 768px) {
+  .slider-controls button {
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+  }
+}
+
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  margin-top: 15px;
+}
+
+.accordion-content img {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.accordion-content p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* RIGHT – SLIDER */
+.portfolio-right {
+  flex: 1;
+  position: relative;
+}
+@media (max-width: 768px) {
+
+  /* Ümumi layout column olsun */
+  .portfolio-layout {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* Accordion yuxarıda qalsın */
+  .portfolio-left {
+    order: 1;
+  }
+
+  /* Slider aşağı düşsün */
+  .portfolio-right {
+    order: 2;
+  }
+
+  /* Slider ölçüləri mobilə uyğunlaşsın */
+  .slider {
+    width: 200px;
+    width: 100%;
+    height: 360px;
+    perspective: 1000px;
+  }
+
+  .slide {
+      width: 210px;
+  }
+
+  .slide.left {
+    transform: translateX(-110%) rotateY(25deg) scale(0.78);
+  }
+
+  .slide.right {
+    transform: translateX(20%) rotateY(-25deg) scale(0.78);
+  }
+  }
+
+  .slide.left {
+    transform: translateX(-120%) rotateY(30deg) scale(0.8);
+  }
+
+  .slide.right {
+    transform: translateX(20%) rotateY(-30deg) scale(0.8);
+  }
+
+  .slide-card {
+    padding: 25px;
+    text-align: center;
+  }
+  .slide-card p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .slide-card title {
+    font-size: 13px;
+    
+  }
+
+  .slide-card img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* Accordion spacing mobil üçün */
+  .accordion-item {
+    padding: 16px 0;
+  }
+
+  .accordion-header {
+    font-size: 16px;
+  }
+
+  .accordion-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
