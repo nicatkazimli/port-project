@@ -214,11 +214,17 @@
     transform: translateX(0) !important; /* scroll effektini saxla */
   }
 
-  .mockup-laptop {
-    max-width: 90%;
-    height: 300px;
+    .mockup-laptop {
+    max-width: 100%;
+    height: auto;          /* ❗ vacib */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   .mockup-laptop img {
-    width: 90%;
+    width: 100%;
+    height: auto;          /* ❗ vacib */
+    object-fit: contain;   /* ❗ şəkil tam düşür */
   }
 }
