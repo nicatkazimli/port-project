@@ -215,7 +215,10 @@
   }
 
   .mockup-laptop {
-    max-width: 90%;
+    max-width: 70%;
     height: 300px;
+  }
+  .mockup-laptop img {
+    width: 50%;
   }
 }
