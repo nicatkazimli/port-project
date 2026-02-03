@@ -15,8 +15,7 @@ function App() {
   return (
     <>
       <nav className="navbar">
-       
-
+<img className="logo" src="/logo.png" /> 
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>

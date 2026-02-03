@@ -19,12 +19,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 16px 48px;
-  padding-left: 170px;
+  padding: 16px 175px;   /* 🔥 SOLDAN və SAĞDAN 120px */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  justify-content: space-between; /* 🔥 ƏSAS SİRR */
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(30px);
   border-bottom: 1px solid #eee;
@@ -76,6 +74,30 @@ body {
   border-radius: 4px;
   transform: translateX(-50%);
   transition: width 0.35s ease;
+}
+.logo {
+  width: 90px;              /* desktop ölçü */
+  height: 90px;
+  object-fit: contain;       /* kəsilmə OLMAZ */
+  display: block;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* hover – UX/UI touch */
+.logo:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 10px 25px rgba(255, 180, 0, 0.35));
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;  
+    height: 60px;          /* mobil üçün ideal */
+    margin: 0 auto; 
+    margin-left: -6px;         /* center */
+  }
 }
 
 .navbar a:hover::after {
@@ -147,7 +169,7 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
   .navbar {
-    padding-left: 24px;
+    padding: 16px 75px;
   }
 
   .burger {

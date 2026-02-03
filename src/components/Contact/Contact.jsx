@@ -41,10 +41,10 @@ const SocialCounter = ({ icon, label, count }) => {
 
 const Contact = () => {
   return (
-    <section id="contact" className="section contact">
+    <section id="contact" className="contact">
       <div className="contact-main">
 
-        {/* LEFT - TITLE */}
+        {/* LEFT */}
         <div className="contact-left">
           <h1>
             Get in <br /> <span>touch.</span>
@@ -53,7 +53,23 @@ const Contact = () => {
           <h2>Start a conversation.</h2>
         </div>
 
-        {/* RIGHT - INFO */}
+        {/* MIDDLE - FORM */}
+        <form
+          className="contact-form"
+          action="mailto:gnlmammad00@gmail.com"
+          method="POST"
+          encType="text/plain"
+        >
+          <h3>Send me a message</h3>
+
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" placeholder="Your message" required />
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        {/* RIGHT */}
         <div className="contact-right">
           <div className="info">
             <FaMapMarkerAlt className="icon" />
@@ -81,7 +97,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* SOCIALS - ALT */}
+      {/* SOCIALS */}
       <div className="social-wrapper">
         <SocialCounter icon={<FaInstagram />} label="Instagram" count={4.1} />
         <SocialCounter icon={<FaTiktok />} label="TikTok" count={3.5} />
